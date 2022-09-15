@@ -2,21 +2,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp-v1
+  name: myapp-v2
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: myapp-v1
+      app: myapp-v2
   template:
     metadata:
       labels:
-        app: myapp-v1
+        app: myapp-v2
 
     spec:
       containers:
-      - name: myapp-v1
-        image: arjunmishra/test-repo:tagversion
+      - name: myapp-v2
+        image: arjunmishra/app-deploy-k8s:tagversion
         ports:
         - containerPort: 8080
 ---
@@ -26,7 +26,7 @@ metadata:
   name: nodejs-service
 spec:
   selector:
-    app: myapp-v1
+    app: myapp-v2
   type: LoadBalancer
   ports:
   - port: 80
