@@ -23,7 +23,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: newservice-v2
+  name: nodejs-service
 spec:
   selector:
     app: myapp-v2
