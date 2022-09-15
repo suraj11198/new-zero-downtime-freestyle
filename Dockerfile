@@ -1,5 +1,7 @@
-FROM tomcat:8.0.20-jre8
+FROM node:12.6.0-alpine
 
-RUN mkdir /usr/local/tomcat/webapps/myapp
+EXPOSE 8080
 
-COPY kubernetes/target/kubernetes-1.0-AMIT.war /usr/local/tomcat/webapps/kubernetes-1.0-AMIT.war
+COPY server.js .
+
+CMD node server.js
