@@ -1,8 +1,6 @@
 pipeline {
     agent any
-	tools {
-		maven 'Maven'
-	}
+	
 	
 	environment {
 		PROJECT_ID = 'gke-deployment-362011'
@@ -18,19 +16,9 @@ pipeline {
 		    }
 	    }
 	    
-	    stage('Build') {
-		    steps {
-			    sh 'mvn clean package'
-		    }
-	    }
 	    
-	    stage('Test') {
-		    steps {
-			    echo "Testing..."
-			    sh 'mvn test'
-		    }
-	    }
 	    
+	       
 	    stage('Build Docker Image') {
 		    steps {
 			    sh 'whoami'
