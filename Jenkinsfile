@@ -53,4 +53,10 @@ pipeline {
 		    }
 	    }
     }
+	post {
+    		failure {
+      		build job: 'V1'
+    }
+  }
 }
+
