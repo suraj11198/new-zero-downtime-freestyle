@@ -27,6 +27,7 @@ metadata:
 spec:
   selector:
     app: myapp-v2
+  loadBalancerIP: 35.215.0.250
   type: LoadBalancer
   ports:
   - port: 80
