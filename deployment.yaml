@@ -5,9 +5,6 @@ metadata:
   name: myapp-v2
 spec:
   replicas: 2
-  
-  revisionHistoryLimit: 100
-  
   selector:
     matchLabels:
       app: myapp-v2
