@@ -23,7 +23,7 @@ pipeline {
 		    steps {
 			    sh 'whoami'
 			    script {
-				    myimage = docker.build("arjunmishra/app-deploy-k8s>>>>>:${env.BUILD_ID}")
+				    myimage = docker.build("arjunmishra/app-deploy-k8s:${env.BUILD_ID}")
 			    }
 		    }
 	    }
